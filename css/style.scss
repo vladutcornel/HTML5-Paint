@@ -1,0 +1,168 @@
+@import "../node_modules/bootstrap-sass/assets/stylesheets/bootstrap";
+$toolbarHeight: 83px;
+
+#Wrapper {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+}
+
+#ToolBar {
+    @include form-inline;
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    height: $toolbarHeight;
+    z-index: 2;
+
+    .form-group {
+        margin-top: 3px;
+        margin-right: 10px;
+
+        input, select {
+            @extend .form-control;
+        }
+
+        input[type=color] {
+            padding:0;
+            width: $input-height-base;
+        }
+
+        input[type=number] {
+            text-align: right;
+        }
+    }
+
+    .tools .mode-open,
+    .tools .mode-resize,
+    .tools .mode-pen,
+    .tools .mode-rectangle,
+    .tools .mode-text {
+        display: none;
+    }
+    &.mode-open .tools .mode-open,
+    &.mode-resize .tools .mode-resize,
+    &.mode-pen .tools .mode-pen,
+    &.mode-rectangle .tools .mode-rectangle,
+    &.mode-text .tools .mode-text {
+        display: inline-block;
+    }
+
+    .field-camera {
+        button {
+            @extend .btn;
+            @extend .btn-default;
+        }
+    }
+
+    .field-width, .field-height {
+        input {
+            width: 6em;
+        }
+    }
+
+    .field-line-width {
+        input {
+            width: 5em;
+        }
+    }
+
+    .field-font-size {
+        input {
+            width: 4em;
+        }
+    }
+}
+
+#WorkArea {
+    background: #ccc;
+    position: absolute;
+    top: $toolbarHeight;
+
+    left: 0;
+    right: 0;
+    bottom: 0;
+    overflow: auto;
+
+    #WorkCanvas {
+        background: #fff;
+        cursor: crosshair;
+    }
+
+    #TempCanvas {
+        cursor: crosshair;
+    }
+
+}
+
+#CameraContainer {
+    position: fixed;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+
+    background: #000;
+
+    .close {
+        @extend .btn;
+        @extend .btn-danger;
+
+        z-index: 2;
+        position: absolute;
+        right: 5px;
+        top: 5px;
+        opacity: 1;
+    }
+
+    #VideoContainer {
+        position: absolute;
+        display: flex;
+        height: 100%;
+        width: 100%;
+
+        video {
+            margin: 0 auto;
+            width: 100%;
+            height: 100%;
+        }
+    }
+
+    .bottom-toolbar {
+        position: absolute;
+
+        bottom: 5px;
+        left: 5px;
+        right: 5px;
+
+        .snap-photo {
+            width: 100px;
+            margin: 0 auto;
+            text-align: center;
+
+            .snap-photo-btn {
+                @extend .btn;
+                @extend .btn-primary;
+                @extend .btn-lg;
+
+            }
+        }
+
+        .camera-picker {
+            position: absolute;
+            bottom: 0;
+            left: 0;
+
+            @extend .btn-group-vertical;
+
+            button {
+                @extend .btn;
+                @extend .btn-default;
+                @extend .btn-xs;
+            }
+        }
+    }
+}

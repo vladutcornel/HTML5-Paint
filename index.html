@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Paint</title>
+
+    <link rel="stylesheet" href="css/style.css"/>
+</head>
+<body>
+<div id="Wrapper">
+    <div id="ToolBar">
+        <ul class="nav nav-tabs" id="ModePicker">
+            <li class="mode-open active"><a data-mode="open" href="javascript:;">Open</a></li>
+            <li class="mode-resize"><a data-mode="resize" href="javascript:;">Resize</a></li>
+            <li class="mode-pen"><a data-mode="pen" href="javascript:;">Pen</a></li>
+            <li class="mode-rectangle"><a data-mode="rectangle" href="javascript:;">Rectangle</a></li>
+            <li class="mode-text"><a data-mode="text" href="javascript:;">Text</a></li>
+        </ul>
+
+        <div class="tools">
+            <div class="field-width form-group mode-resize">
+                <label for="CanvasWidth">Width</label>
+                <input type="number" id="CanvasWidth">
+            </div>
+            <div class="field-height form-group mode-resize">
+                <label for="CanvasHeight">Height</label>
+                <input type="number" id="CanvasHeight">
+            </div>
+            <div class="field-line-width form-group mode-pen mode-rectangle mode-text">
+                <label for="LineWidth">Line width</label>
+                <input type="number" id="LineWidth" value="1" min="0">
+            </div>
+            <div class="field-line-color form-group mode-pen mode-rectangle mode-text">
+                <label for="LineColor">Line</label>
+                <input type="color" id="LineColor" value="#000000">
+            </div>
+            <div class="field-fill-color form-group mode-rectangle mode-text">
+                <label for="FillColor">Fill</label>
+                <input type="color" id="FillColor" value="#ffffff">
+            </div>
+            <div class="field-font-size form-group mode-text">
+                <label for="FontSize">Font size</label>
+                <input type="number" id="FontSize" value="20">
+                        </div>
+            <div class="field-font-family form-group mode-text">
+                <label for="FontFamily">Font family</label>
+                <select id="FontFamily"></select>
+            </div>
+            <div class="field-load-file form-group mode-open">
+                <label for="LoadFile">Load File</label>
+                <input type="file" id="LoadFile" accept="image/*">
+            </div>
+            <div class="field-camera form-group CameraField mode-open">
+                <button type="button" id="StartCamera">
+                    <i class="glyphicon glyphicon-camera"></i>
+                </button>
+            </div>
+        </div>
+        <div id="CameraContainer" class="hidden CameraField">
+            <button type="button" class="close">
+                &times;
+            </button>
+            <div id="VideoContainer"></div>
+            <div class="bottom-toolbar">
+                <div class="snap-photo">
+                    <button type="button" class="snap-photo-btn">
+                        <i class="glyphicon glyphicon-camera"></i>
+                    </button>
+                </div>
+                <div class="camera-picker"></div>
+            </div>
+        </div>
+    </div>
+    <div id="WorkArea">
+        <canvas id="WorkCanvas" width="1024" height="768"></canvas>
+        <canvas id="TempCanvas" width="1024" height="768" class="hidden"></canvas>
+    </div>
+</div>
+
+<script src="dist/scripts.js"></script>
+</body>
+</html>

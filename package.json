@@ -1,0 +1,34 @@
+{
+  "name": "cornel-html-paint",
+  "version": "1.0.0",
+  "description": "HTML Paint app by Cornel Borina",
+  "main": "index.html",
+  "dependencies": {
+    "bootstrap": "^3.3.7",
+    "bootstrap-sass": "^3.3.7",
+    "interactjs": "^1.2.8",
+    "jquery": "^3.2.1",
+    "pressure": "^2.1.1",
+    "webpack": "^2.4.1",
+    "webrtc-adapter": "^3.3.3"
+  },
+  "devDependencies": {},
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/vladutcornel/HTML5-Paint.git"
+  },
+  "keywords": [
+    "html5",
+    "paint",
+    "drawing"
+  ],
+  "author": "Cornel Borina",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/vladutcornel/HTML5-Paint/issues"
+  },
+  "homepage": "https://github.com/vladutcornel/HTML5-Paint#readme"
+}
